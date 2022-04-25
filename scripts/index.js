@@ -80,9 +80,29 @@ window.addEventListener("load", loadimageGridCreator)
 function loadimageGridCreator(){
     imageGridCreator(movieDetails);
 }
+document.querySelector("#sortForm").addEventListener("submit",sortmoviescreator)
 
+function sortmoviescreator(){
+    event.preventDefault();
+    var sortArr= movieDetails;
+    var sortType=document.querySelector("#sortOptions").value;
+    if(sortType=="select"){
+        window.addEventListener("load", loadimageGridCreator)
+    }else if(sortType=="lowToHigh"){
+        sortArr.sort(function(a,b){
+           return a.rating-b.rating;
+        })
+    }else{
+        sortArr.sort(function(a,b){
+            return b.rating-a.rating;
+         })
+    }
+    imageGridCreator(sortArr);
+    // window.location.reload();
+}
 
 function imageGridCreator(arr){
+    event.preventDefault();
     arr.forEach(element => {
         var moviediv=document.createElement("div");
         moviediv.setAttribute("class", "moviediv");
@@ -97,7 +117,6 @@ function imageGridCreator(arr){
         imageNamediv.setAttribute("class","imagenamediv");
         var imageNameElement=document.createElement("h2");
         imageNameElement.innerText=element.name;
-        console.log(imageNameElement.innerText)
         imageNamediv.append(imageNameElement);
 
         var releaseElement=document.createElement("p");

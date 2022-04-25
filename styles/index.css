@@ -40,7 +40,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #movies{
-    border: 2px solid red;
+    
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,auto);
@@ -48,14 +48,14 @@
 }
 .moviediv{
     width: 99%;
-    border: 2px solid red;
+    
     display: flex;
     flex-direction: column;
 }
 .movieimagediv{
     height: 70%;
     width: 100%;
-    border: 2px solid red;
+    
     box-sizing: border-box;
 }
 .movieimagediv img{
@@ -72,6 +72,11 @@
     box-sizing: border-box;
 }
 .releaseDteAndRatingdiv p{
+    padding: 30px;
+    color: blue;
+    
+}
+.moviediv h2{
     padding: 30px;
     color: red;
 }
