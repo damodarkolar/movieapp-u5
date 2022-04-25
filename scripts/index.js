@@ -98,7 +98,6 @@ function sortmoviescreator(){
          })
     }
     imageGridCreator(sortArr);
-    // window.location.reload();
 }
 
 function imageGridCreator(arr){
