@@ -83,8 +83,9 @@ function loadimageGridCreator(){
 document.querySelector("#sortForm").addEventListener("submit",sortmoviescreator)
 
 function sortmoviescreator(){
-    event.preventDefault();
-    var sortArr= movieDetails;
+    var sortArr= [...movieDetails];
+    console.log(movieDetails)
+    event.preventDefault();    
     var sortType=document.querySelector("#sortOptions").value;
     if(sortType=="select"){
         window.addEventListener("load", loadimageGridCreator)
@@ -97,11 +98,13 @@ function sortmoviescreator(){
             return b.rating-a.rating;
          })
     }
+    console.log(sortArr);
     imageGridCreator(sortArr);
 }
 
 function imageGridCreator(arr){
     event.preventDefault();
+    document.querySelector("#movies").innerHTML="";
     arr.forEach(element => {
         var moviediv=document.createElement("div");
         moviediv.setAttribute("class", "moviediv");
